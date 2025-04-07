@@ -9,10 +9,8 @@ app = FastAPI()
 WINDOW_SIZE = 10
 window = deque(maxlen=WINDOW_SIZE)
 
-# --- Auth & API Info ---
 AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzQ0MDM1NzgzLCJpYXQiOjE3NDQwMzU0ODMsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImQzYzBkMTQyLTQ5YTgtNGQ3Mi1hNTUxLTYyOTc3OGZmMjk0MyIsInN1YiI6ImFrdW1hcjFfbWUyNEB0aGFwYXIuZWR1In0sImVtYWlsIjoiYWt1bWFyMV9tZTI0QHRoYXBhci5lZHUiLCJuYW1lIjoiYW1hcmRlZXAga3VtYXIiLCJyb2xsTm8iOiI4MDI0MzIwMDEzIiwiYWNjZXNzQ29kZSI6IlhyeWVIRCIsImNsaWVudElEIjoiZDNjMGQxNDItNDlhOC00ZDcyLWE1NTEtNjI5Nzc4ZmYyOTQzIiwiY2xpZW50U2VjcmV0IjoiY2ZQeXNCTUFLQXp2Zk1oUSJ9.vGaitafuptqAODajESculR99y-N4ImQAdxmr81dFGvk"
 
-# Use these final URLs from spec after /test/register response
 NUMBER_API_URLS = {
     "p": "http://20.244.56.144/primes",
     "f": "http://20.244.56.144/fibo",
@@ -20,8 +18,6 @@ NUMBER_API_URLS = {
     "r": "http://20.244.56.144/rand"
 }
 
-
-# --- Core Logic ---
 async def fetch_numbers(number_id: str):
     url = NUMBER_API_URLS.get(number_id)
     if not url:
